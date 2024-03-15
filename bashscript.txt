@@ -1,0 +1,294 @@
+root@bf86da6ed082:~# docker cp bf86da6ed0820ed29b92f665afeeebd446a02253f800a99f9b9382a95866b43e:/path/to/container/file /path/on/host
+bash: docker: command not found
+root@bf86da6ed082:~#
+PS C:\Users\Sharaf\bd-a1> docker ps
+CONTAINER ID   IMAGE         COMMAND       CREATED        STATUS         PORTS     NAMES
+bf86da6ed082   bd-a1-image   "/bin/bash"   27 hours ago   Up 9 minutes             bd-a1-container
+PS C:\Users\Sharaf\bd-a1> docker cp <container_id>:/path/to/container/file /path/on/host
+At line:1 char:11
++ docker cp <container_id>:/path/to/container/file /path/on/host
++           ~
+The '<' operator is reserved for future use.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
+
+PS C:\Users\Sharaf\bd-a1> docker cp bf86da6ed082:/path/to/container/file /path/on/host  
+>> 
+invalid output path: directory "C:\\path\\on" does not exist
+PS C:\Users\Sharaf\bd-a1> docker cp bf86da6ed082:/C:\Users\Sharaf\bd-a1
+"docker cp" requires exactly 2 arguments.
+See 'docker cp --help'.
+
+Usage:  docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+        docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+
+Copy files/folders between a container and the local filesystem
+PS C:\Users\Sharaf\bd-a1> docker cp bf86da6ed082:/C:\Users\Sharaf\bd-a1/vis.py
+"docker cp" requires exactly 2 arguments.
+See 'docker cp --help'.
+
+Usage:  docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+        docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+
+Copy files/folders between a container and the local filesystem
+PS C:\Users\Sharaf\bd-a1> docker exec -it bd-a1-container /bin/bash
+root@bf86da6ed082:/# cd
+root@bf86da6ed082:~# cd /home/doc-bd-a1/
+root@bf86da6ed082:/home/doc-bd-a1# docker cp bd-a1-container:/home/doc-bd-a1/vis.py     
+ 
+bash: docker: command not found
+root@bf86da6ed082:/home/doc-bd-a1#
+PS C:\Users\Sharaf\bd-a1> docker cp bd-a1-container:/home/doc-bd-a1/vis.py              
+"docker cp" requires exactly 2 arguments.
+See 'docker cp --help'.
+
+Usage:  docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+        docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+
+Copy files/folders between a container and the local filesystem
+PS C:\Users\Sharaf\bd-a1> docker cp bd-a1-container:/home/doc-bd-a1/vis.py C:\Users\Sharaf\bd-a1
+>>
+Successfully copied 2.56kB to C:\Users\Sharaf\bd-a1
+PS C:\Users\Sharaf\bd-a1> docker cp bd-a1-container:/home/doc-bd-a1/model.py C:\Users\Sharaf\bd-a1
+>> 
+Successfully copied 2.56kB to C:\Users\Sharaf\bd-a1
+PS C:\Users\Sharaf\bd-a1> docker cp bd-a1-container:/home/doc-bd-a1/load.py C:\Users\Sharaf\bd-a1
+>> 
+Successfully copied 3.07kB to C:\Users\Sharaf\bd-a1
+PS C:\Users\Sharaf\bd-a1> docker cp bd-a1-container:/home/doc-bd-a1/eda.py C:\Users\Sharaf\bd-a1
+>> 
+Successfully copied 3.07kB to C:\Users\Sharaf\bd-a1
+PS C:\Users\Sharaf\bd-a1> docker cp bd-a1-container:/home/doc-bd-a1/dpre.py C:\Users\Sharaf\bd-a1
+>> 
+Successfully copied 4.1kB to C:\Users\Sharaf\bd-a1
+PS C:\Users\Sharaf\bd-a1> docker cp bd-a1-container:/home/doc-bd-a1/clustered_data.csv C:\Users\Sharaf\bd-a1
+>> >> 
+Successfully copied 4.61kB to C:\Users\Sharaf\bd-a1
+>> : The term '>>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling 
+of the name, or if a path was included, verify that the path is correct and try again.
+At line:2 char:1
++ >>
++ ~~
+    + CategoryInfo          : ObjectNotFound: (>>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Sharaf\bd-a1> git clone https://github.com/ahmadmedhat66/big-data-assignment.git
+fatal: destination path 'big-data-assignment' already exists and is not an empty directory.
+PS C:\Users\Sharaf\bd-a1> git push -u origin master
+>>
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\Users\Sharaf\bd-a1> cd
+PS C:\Users\Sharaf\bd-a1> git init
+>>
+Initialized empty Git repository in C:/Users/Sharaf/bd-a1/.git/
+PS C:\Users\Sharaf\bd-a1> git add 
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+PS C:\Users\Sharaf\bd-a1> git push -u origin master    
+error: src refspec master does not match any
+error: failed to push some refs to 'origin'
+PS C:\Users\Sharaf\bd-a1> git clone https://github.com/ahmadmedhat66/big-data-assignment.git
+fatal: destination path 'big-data-assignment' already exists and is not an empty directory.
+PS C:\Users\Sharaf\bd-a1> git add .
+>>
+warning: adding embedded git repository: big-data-assignment
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> big-data-assignment
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached big-data-assignment
+hint:
+hint: See "git help submodule" for more information.
+warning: in the working copy of 'service-result/eda-in-1.txt', LF will be replaced by CRLF the next time Git touches it        
+warning: in the working copy of 'service-result/eda-in-2.txt', LF will be replaced by CRLF the next time Git touches it        
+warning: in the working copy of 'service-result/eda-in-3.txt', LF will be replaced by CRLF the next time Git touches it        
+warning: in the working copy of 'service-result/eda-in-4.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'service-result/eda-in-5.txt', LF will be replaced by CRLF the next time Git touches it        
+warning: in the working copy of 'service-result/eda-in-6.txt', LF will be replaced by CRLF the next time Git touches it        
+warning: in the working copy of 'service-result/k.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'service-result/res_dpre.csv', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\Sharaf\bd-a1> git commit -m "Initial commit"
+>>
+[master (root-commit) 1b88706] Initial commit
+ 12 files changed, 107 insertions(+)
+ create mode 160000 big-data-assignment
+ create mode 100644 dockerfile
+ create mode 100644 final.ps1
+ create mode 100644 service-result/eda-in-1.txt
+ create mode 100644 service-result/eda-in-2.txt
+ create mode 100644 service-result/eda-in-3.txt
+ create mode 100644 service-result/eda-in-4.txt
+ create mode 100644 service-result/eda-in-5.txt
+ create mode 100644 service-result/eda-in-6.txt
+ create mode 100644 service-result/k.txt
+ create mode 100644 service-result/res_dpre.csv
+ create mode 100644 service-result/vis.png
+PS C:\Users\Sharaf\bd-a1> git push -u origin master
+>>
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\Sharaf\bd-a1> git remote add origin https://github.com/sharaff7/big-data-assignment.git  
+>> 
+PS C:\Users\Sharaf\bd-a1> git push -u origin master
+>>
+info: please complete authentication in your browser...
+remote: Repository not found.
+fatal: repository 'https://github.com/sharaff7/big-data-assignment.git/' not found
+PS C:\Users\Sharaf\bd-a1> 
+PS C:\Users\Sharaf\bd-a1> git remote add origin https://github.com/ahmedmedhat66/big-data-assignment.git
+>>    
+error: remote origin already exists.
+PS C:\Users\Sharaf\bd-a1> git remote set-url origin https://github.com/ahmedmedhat66/big-data-assignment.git
+>>
+PS C:\Users\Sharaf\bd-a1> git push -u origin master
+>>
+remote: Repository not found.
+fatal: repository 'https://github.com/ahmedmedhat66/big-data-assignment.git/' not found
+PS C:\Users\Sharaf\bd-a1> git push -u origin master
+>>
+info: please complete authentication in your browser...
+remote: Repository not found.
+fatal: repository 'https://github.com/ahmedmedhat66/big-data-assignment.git/' not found
+PS C:\Users\Sharaf\bd-a1> git remote set-url origin https://github.com/sharaff7/big-data-assignment.git     
+>> 
+PS C:\Users\Sharaf\bd-a1> git push -u origin master
+>> 
+info: please complete authentication in your browser...
+remote: Repository not found.
+fatal: repository 'https://github.com/sharaff7/big-data-assignment.git/' not found
+PS C:\Users\Sharaf\bd-a1> git remote set-url origin https://github.com/sharaff7/big-data-assignment.git
+>> 
+PS C:\Users\Sharaf\bd-a1> git push -u origin master
+>> 
+info: please complete authentication in your browser...
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (14/14), 30.21 KiB | 3.78 MiB/s, done.
+Total 14 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/sharaff7/big-data-assignment/pull/new/master
+remote:
+To https://github.com/sharaff7/big-data-assignment.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+PS C:\Users\Sharaf\bd-a1> git push -u origin main  
+>> 
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/sharaff7/big-data-assignment.git'
+PS C:\Users\Sharaf\bd-a1> git push -u main       
+>> 
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\Sharaf\bd-a1> git push -u origin main
+>> 
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/sharaff7/big-data-assignment.git'
+PS C:\Users\Sharaf\bd-a1> git push origin --delete master
+>>
+To https://github.com/sharaff7/big-data-assignment.git
+ - [deleted]         master
+PS C:\Users\Sharaf\bd-a1> git push origin main
+>> 
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/sharaff7/big-data-assignment.git'
+PS C:\Users\Sharaf\bd-a1> git checkout main
+>>
+error: pathspec 'main' did not match any file(s) known to git
+PS C:\Users\Sharaf\bd-a1> git add .
+>> git commit -m "Your commit message"
+>>
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   big-data-assignment (untracked content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Sharaf\bd-a1> git status
+>>
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   big-data-assignment (untracked content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Sharaf\bd-a1> git add .
+>>
+PS C:\Users\Sharaf\bd-a1> git commit -m "Your commit message"
+>>
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   big-data-assignment (untracked content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Sharaf\bd-a1> git push origin master
+>>
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (14/14), 30.21 KiB | 2.75 MiB/s, done.
+Total 14 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/sharaff7/big-data-assignment/pull/new/master
+remote:
+To https://github.com/sharaff7/big-data-assignment.git
+ * [new branch]      master -> master
+PS C:\Users\Sharaf\bd-a1> git push origin --delete master
+>>
+To https://github.com/sharaff7/big-data-assignment.git
+ - [deleted]         master
+PS C:\Users\Sharaf\bd-a1> docker exec -it bd-a1-container /bin/bash                               
+root@bf86da6ed082:/# cd /home/doc-bd-a1/
+root@bf86da6ed082:/home/doc-bd-a1# python3 load.py Israel-Palestine.csv
+2024-03-15 18:07:07,697 - INFO - Dataset loaded successfully:
+   Year    Country    GDP (in USD)  ... Number of Tanks  Number of Submarines  Number of Armoured Vehicles
+0  2000     Israel  132.02 billion  ...           2,760                   3.0                       10,760
+1  2000  Palestine    4.56 billion  ...             NaN                   NaN                          NaN
+2  2001     Israel  131.02 billion  ...           2,791                   3.0                       10,814
+3  2001  Palestine    4.59 billion  ...             NaN                   NaN                          NaN
+4  2002     Israel  126.64 billion  ...           2,821                   3.0                       10,885
+
+[5 rows x 16 columns]
+Data preprocessing completed. Result saved as res_dpre.csv
+Exploratory Data Analysis completed. Insights saved as text files.
+Exploratory Data Analysis completed.
+2024-03-15 18:07:10,460 - INFO - Dataset transferred to dpre.py successfully.
+K-means clustering completed. Cluster counts saved as k.txt
+Visualization created and saved as vis.png
+root@bf86da6ed082:/home/doc-bd-a1# 
