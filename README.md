@@ -1,7 +1,3 @@
-Here's an example of how your README file could be structured to show the execution of the project, including all Docker commands used:
-
----
-
 # Big Data Assignment README
 
 This README file provides instructions on how to execute the project, including all Docker commands used and an overview of the project's structure.
